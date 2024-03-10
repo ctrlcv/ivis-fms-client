@@ -20,7 +20,8 @@ const double kMobileWidth = 700;
 const double kTabletWidth = 1300;
 const double kDesktopWidth = 1290;
 
-const String kApiServer = "localhost:3090"; //"ec2-3-38-99-211.ap-northeast-2.compute.amazonaws.com:3090";
+const String kApiServer =
+    "10.0.2.2:3090"; //"localhost:3090"; //"ec2-3-38-99-211.ap-northeast-2.compute.amazonaws.com:3090";
 const String kMapServer =
     "http://localhost:3000/carstate"; //"http://ec2-3-38-99-211.ap-northeast-2.compute.amazonaws.com:5000/carstate";
 const String kSocketServer = "http://localhost:8399";

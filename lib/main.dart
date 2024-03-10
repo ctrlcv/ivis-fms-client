@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:fmsclient/view/pages/start_page.dart';
+import 'package:fmsclient/viewmodel/controller/vehicle_controller.dart';
 import 'package:get/get.dart';
 
 void main() {
@@ -11,6 +12,8 @@ void main() {
       statusBarBrightness: Brightness.light,
     ),
   );
+
+  Get.put(VehicleController());
 
   runApp(const IvisFmsClientApp());
 }

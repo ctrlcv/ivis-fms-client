@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
@@ -9,10 +11,11 @@ class VehicleRepository extends BaseRepository {
   final String vehicleStatusUpdatePath = "/api/status/update";
 
   Future<bool> requestUpdateVehicleStatus(Map<String, dynamic> params) async {
-    var url = Uri.http(kApiServer, vehicleStatusUpdatePath, params);
+    var url = Uri.http(kApiServer, vehicleStatusUpdatePath);
+    String body = jsonEncode(params);
 
     try {
-      final response = await http.get(url, headers: getHeader());
+      final response = await http.post(url, body: body, headers: getHeader());
       return handleResponse(response, (jsonResponse) {
         // debugPrint("requestUpdateVehicleStatus() ${jsonResponse.toString()}");
         CommonResponse commonResponse = CommonResponse.fromJson(jsonResponse);
