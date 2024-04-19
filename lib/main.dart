@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:fmsclient/view/pages/start_page.dart';
+import 'package:fmsclient/viewmodel/controller/mqtt_controller.dart';
 import 'package:fmsclient/viewmodel/controller/vehicle_controller.dart';
 import 'package:get/get.dart';
 
@@ -14,6 +15,7 @@ void main() {
   );
 
   Get.put(VehicleController());
+  Get.put(MqttController());
 
   runApp(const IvisFmsClientApp());
 }

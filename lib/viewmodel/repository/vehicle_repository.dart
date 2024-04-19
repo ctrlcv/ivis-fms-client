@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:http/http.dart' as http;
 
 import '../../constants/constants.dart';
@@ -30,5 +31,10 @@ class VehicleRepository extends BaseRepository {
       debugPrint("[Exception] requestUpdateVehicleStatus() ${e.toString()}");
       return false;
     }
+  }
+
+  Future<Map<String, dynamic>> requestLoadJsonFromAssets(String filePath) async {
+    String jsonString = await rootBundle.loadString(filePath);
+    return jsonDecode(jsonString);
   }
 }

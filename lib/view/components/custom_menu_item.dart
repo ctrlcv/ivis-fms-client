@@ -104,12 +104,12 @@ class CustomMenuItem extends StatelessWidget {
                       ? Container()
                       : Icon(
                           icon,
-                          size: 20,
+                          size: 24,
                           color: isSelected
                               ? Colors.white
                               : isOnHover
                                   ? kHoverColor
-                                  : Colors.grey,
+                                  : kBlackFontColor,
                         ),
                 ),
                 const SizedBox(width: 8),
@@ -119,13 +119,13 @@ class CustomMenuItem extends StatelessWidget {
                   child: Text(
                     menuText,
                     style: TextStyle(
-                      fontSize: 18,
+                      fontSize: 22,
                       fontWeight: isSelected ? FontWeight.w700 : FontWeight.w500,
                       color: isSelected
                           ? Colors.white
                           : isOnHover
                               ? kHoverColor
-                              : Colors.grey,
+                              : kBlackFontColor,
                       decoration: isOnHover ? TextDecoration.underline : TextDecoration.none,
                       decorationColor: isOnHover ? Colors.white : Colors.transparent,
                       height: 1.6,
